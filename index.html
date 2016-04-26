@@ -9,12 +9,47 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     
     <link rel="stylesheet" type="text/css" href="css/port.css">
+    
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Prevent default anchor click behavior
+    event.preventDefault();
+
+    // Store hash
+    var hash = this.hash;
+
+    // Using jQuery's animate() method to add smooth page scroll
+    // The optional number (500) specifies the number of milliseconds it takes to scroll to the specified area
+    $('html, body').animate({
+      scrollTop: $(hash).offset().top
+    }, 500, function(){
+   
+      // Add hash (#) to URL when done scrolling (default click behavior)
+      window.location.hash = hash;
+    });
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+    });
+  });
+})
+</script>
+    
+    
+    
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar  navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <div class="navbar-header">
+    <div class="navbar-header" >
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -23,9 +58,9 @@
       <a class="navbar-brand" href="#">Portfolio</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right ">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About J.H</a></li>
+        <li><a href="#about">About J.H</a></li>
         <li><a href="#skill">Skill</a></li>
         <li><a href="#port">Protfolio</a></li>
       </ul>
@@ -33,19 +68,15 @@
   </div>
 </nav>
 
-<section class="services" id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading">About JH</h2>
-					<hr class="primary">
-				</div>
-			</div>
-		</div>
+<br id="about">
+<section >
+        <hr class="primary">
 		<div class="container">
 		<div class="row">
 				<div class="col-lg-12 text-center">
 					<div class="service-box">
+					<h1>About J.H</h1>
+					<hr class="primary">
 					<img src="img/jin.jpg" alt="#" style="width:200px">
 					<img src="img/jin2.jpg" alt="#" style="width:200px">
 					<img src="img/jin5.jpg" alt="#" style="width:200px">
@@ -95,13 +126,14 @@
 				<div class="col-lg-4 col-md-6 text-center">
 					<div class="service-box">
 						<h3>메신저</h3>
-						<p class="text-muted">페이스북: <a href="https://www.facebook.com/">facebook.com/</a><br />카카오톡 : </p>
+						<p class="text-muted">페이스북: <a href="https://www.facebook.com/choi.jinho.357">https://www.facebook.com/choi.jinho.357</a><br />카카오톡 : jinho0503 </p>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="container" id="skill">
+<br id="skill">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<h2 class="section-heading" style="padding-top:15px;">SKILL</h2>
@@ -112,7 +144,7 @@
         
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-4 col-md-6 text-center">
+				<div class="col-lg-3 col-md-6 text-center">
 					<div class="service-box">
 						<h3>HTML/HTML5/CSS</h3>
 						
@@ -128,7 +160,7 @@
 						
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center">
+				<div class="col-lg-3 col-md-6 text-center">
 					<div class="service-box">
 						<h3>PHOTOSHOP</h3>
 							<div class="progress progress-striped active">
@@ -142,12 +174,12 @@
 						    </p>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 text-center">
+				<div class="col-lg-3 col-md-6 text-center">
 					<div class="service-box">
-						<h3>JAVASCRIPT/JQUERY</h3>
+						<h3>JAVASCRIPT</h3>
 						
 							<div class="progress progress-striped active">
-								<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+								<div class="progress-bar progress-bar-info  progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
 									40%
 								</div>
 							</div>
@@ -157,38 +189,59 @@
 							</p>
 						</div>
 					</div>
+                   
+                    <div class="col-lg-3 col-md-6 text-center">
+					<div class="service-box">
+                        <h3>LIBRARY</h3>
+                            
+							<div class="progress progress-striped active">
+								<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
+									40%
+								</div>
+							</div>
+							<p class="text-muted">
+							     Jquery/Bootstrap<br>
+							</p>
+						</div>
+					</div>
+					
 				</div>
 			</div>			
 			
-    <div class="container">
-    
-    </div>
+
 	</section>
 
-<div id="port">
+<br id="port">
+<br>
     <div class="container-fluid bg-3 text-center">    
       <h1>Portfolio</h1>
       <hr class="primary">
       <div class="row">
         <div class="col-sm-3">
           <p>HUF Main</p>
-          <a href="http://jin1.dothome.co.kr/port/index.html" target="_blank"><img src="img/hufmain.png" class="img-responsive" style="width:100%" alt="Image"></a>
+          <p>HTML5/CSS3/Javacript</p>
+          <a href="http://jin1.dothome.co.kr/port/index.html" target="_blank"><img src="img/hufmain.png" class="img-responsive" style="width:100%" alt="HUF Main Homepage"></a>
         </div>
         <div class="col-sm-3"> 
           <p>HUF SupPage</p>
-          <a href="http://jin1.dothome.co.kr/port/sup_page.html#" target="_blank"><img src="img/hufsup.png" class="img-responsive" style="width:100%" alt="Image"></a>
+          <p>HTML5/CSS3/Jquery/JavaScript</p>
+          <a href="http://jin1.dothome.co.kr/port/sup_page.html#" target="_blank"><img src="img/hufsup.png" class="img-responsive" style="width:100%" alt="HUF suppage"></a>
         </div>
         <div class="col-sm-3"> 
-          <p>Some text..</p>
-          <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+          <p>영화 홍보페이지</p>
+          <p>Jquery.Mobile</p>
+          <a href="http://jin1.dothome.co.kr/movie/index.html" target="_blank">
+          <img src="img/Twilight.png" class="img-responsive" style="width:100%" alt=""></a>
         </div>
         <div class="col-sm-3">
-          <p>Some text..</p>
-          <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+          <p>평창동계올림픽 홈페이지</p>
+            <p>Bootstrap/CSS</p>
+          <a href="http://jin1.dothome.co.kr/pc/">
+          <img src="img/olympic.png" class="img-responsive" style="width:100%" alt="평창동계올림픽 페이지"></a>
         </div>
       </div>
     </div><br>
-</div>
+
 
 <footer class="container-fluid text-center">
     <p>읽어주셔서 정말 감사합니다!!!!!</p>
